@@ -10,14 +10,15 @@ If you want to use dependency injection, I suggest to use [noicejs library]
 ServiceModule.ts
 
     import { Module, ModuleOptions } from 'noicejs';
+    import FakeTodoService from '@/todolist/model/services/FakeTodoService';
     
     export default class ServiceModule extends Module {
       public async configure(options: ModuleOptions) {
         await super.configure(options);
     
+        this.bind('todoService').toConstructor(FakeTodoService);
         this.bind('componentAService').toConstructor(FakeComponentAService);
-        this.bind('componentBService').toConstructor(FakeComponentBService);
-        this.bind('componentCService').toConstructor(RealComponentCService);
+        this.bind('componentBService').toConstructor(RealComponentBService);
         .
         .
       }
@@ -52,25 +53,26 @@ services.ts
 
     import { BaseOptions, Inject } from 'noicejs';
     import diContainer from '@/diContainer';
+    import { ITodoService } from '@/todolist/model/services/ITodoService';
     
     interface ServicesOptions extends BaseOptions {
+      todoService: ITodoService;
       componentAService: IComponentAService;
       componentBService: IComponentBService;
-      componentCService: IComponentCService;
       .
       .
     }
     
     @Inject('componentAService', 'componentBService', 'componentCService', ...)
     class Services {
-     componentAService: IComponentAService;
+     todoService: ITodoService;
      componentBService: IComponentBService;
      componentCService: IComponentCService;
      .
      .
     
       constructor(options: ServicesOptions) {
-        this.componentAService = options.componentAService;
+        this.todoService = options.todoService;
         this.componentBService = options.componentBService;
         this.componentCService = options.componentCService;
         .
