@@ -10,7 +10,7 @@ If you want to use dependency injection, I suggest to use [noicejs library]
 Create module by extending it from 'Module'. Override 'configure' function, and inside it, bind service names to
 service constructor functions 
 
-ServiceModule.ts
+**ServiceModule.ts**
 
     import { Module, ModuleOptions } from 'noicejs';
     import FakeTodoService from '@/todolist/model/services/FakeTodoService';
@@ -30,7 +30,7 @@ ServiceModule.ts
 ### 2. Create Dependency Injection (DI) container
 Use module(s) created in step 1. to create DI container using 'Container.from' function
 
-diContainer.ts
+**diContainer.ts**
 
     import { Container } from 'noicejs';
     import ServiceModule from '@/modules/ServiceModule';
@@ -41,7 +41,7 @@ diContainer.ts
 ### 3. Configure DI container
 Configure DI container created in step 2. before rendering app.
 
-main.tsx
+**main.tsx**
     
     import diContainer from '@/diContainer';
 
@@ -58,7 +58,7 @@ Inject services by names to Services class constructor. Export 'getServices()' f
 instance of Services created by 'diContainer.create' function. Created 'Services' class instance contains injected
 services.
 
-services.ts
+**services.ts**
 
     import { BaseOptions, Inject } from 'noicejs';
     import diContainer from '@/diContainer';
@@ -103,7 +103,7 @@ services.ts
 ### 5. Use service in action
 Import getServices() function and call it to get the injected services
 
-fetchTodos.ts
+**fetchTodos.ts**
 
     import store from '@/store/store';
     import getServices from '@/services/services';
