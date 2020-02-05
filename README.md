@@ -89,7 +89,8 @@ services.ts
       return services;
     };
 
-### 5. Use service
+### 5. Use service in action
+fetchTodos.ts
 
     import store from '@/store/store';
     import getServices from '@/services/services';
