@@ -7,7 +7,8 @@ If you want to use dependency injection, I suggest to use [noicejs library]
 ## Example usage
 
 ### 1. Create module(s)
-Here we bind service names to service constructor functions 
+Bind service names to service constructor functions 
+
 ServiceModule.ts
 
     import { Module, ModuleOptions } from 'noicejs';
