@@ -7,6 +7,7 @@ If you want to use dependency injection, I suggest to use [noicejs library]
 ## Example usage
 
 ### 1. Create module(s)
+Here we bind service names to service constructor functions 
 ServiceModule.ts
 
     import { Module, ModuleOptions } from 'noicejs';
@@ -25,7 +26,7 @@ ServiceModule.ts
     }
     
 ### 2. Create Dependency Injection (DI) container
-Use module(s) created in step 1. here
+Use module(s) created in step 1. to create DI container
 
 diContainer.ts
 
@@ -36,6 +37,8 @@ diContainer.ts
     
 
 ### 3. Configure DI container
+Configure DI container created in step 2. in main
+
 main.tsx
     
     import diContainer from '@/diContainer';
@@ -49,6 +52,8 @@ main.tsx
     });
     
 ### 4. Create services
+Inject services by names to Services class constructor
+
 services.ts
 
     import { BaseOptions, Inject } from 'noicejs';
