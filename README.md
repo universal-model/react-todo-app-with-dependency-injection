@@ -4,6 +4,28 @@ If you want to use dependency injection, I suggest to use [noicejs library]
 
     npm install --save noicejs
     
+Add following option to tsconfig.json:
+
+    "experimentalDecorators": true
+    
+When using Babel you need to install Decorator support:
+
+    npm install --save-dev @babel/plugin-proposal-decorators
+    
+When using Babel, add following to .babelrc file:
+
+    "plugins": [
+        [
+          "@babel/plugin-proposal-decorators",
+          {
+            "legacy": true
+          }
+        ],
+        other plugins here,
+        .
+        .
+      ]
+      
 ## Example usage
 
 ### 1. Create module(s)
