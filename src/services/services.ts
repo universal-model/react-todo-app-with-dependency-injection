@@ -8,7 +8,7 @@ interface ServicesOptions extends BaseOptions {
 
 @Inject('todoService')
 class Services {
-  todoService: ITodoService;
+  readonly todoService: ITodoService;
 
   constructor(options: ServicesOptions) {
     this.todoService = options.todoService;

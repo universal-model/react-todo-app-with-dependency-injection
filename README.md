@@ -76,9 +76,9 @@ Created 'Services' class instance contains injected services.
     
     @Inject('todoService', 'componentAService', 'componentBService', ...)
     class Services {
-     todoService: ITodoService;
-     componentBService: IComponentBService;
-     componentCService: IComponentCService;
+     readonly todoService: ITodoService;
+     readonly componentBService: IComponentBService;
+     readonly componentCService: IComponentCService;
      .
      .
     
