@@ -63,7 +63,7 @@ services.ts
       .
     }
     
-    @Inject('componentAService', 'componentBService', 'componentCService', ...)
+    @Inject('todoService', 'componentAService', 'componentBService', ...)
     class Services {
      todoService: ITodoService;
      componentBService: IComponentBService;
