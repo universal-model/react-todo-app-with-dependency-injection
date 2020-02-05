@@ -117,7 +117,6 @@ Import getServices() function and call it to get the services
       todosState.hasTodosFetchFailure = false;
     
       try {
-    
         todosState.todos = await (await getServices()).todoService.tryFetchTodos();
       } catch (error) {
         todosState.hasTodosFetchFailure = true;
