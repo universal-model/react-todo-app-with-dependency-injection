@@ -103,7 +103,7 @@ Created 'Services' class instance contains injected services.
     };
 
 ### 5. Use service in action
-Import getServices() function and call it to get the injected services
+Import getServices() function and call it to get the services
 
 **fetchTodos.ts**
 
