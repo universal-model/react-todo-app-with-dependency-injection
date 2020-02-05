@@ -7,7 +7,7 @@ If you want to use dependency injection, I suggest to use [noicejs library]
 ## Example usage
 
 ### 1. Create module(s)
-Create module by extending it from 'Module'. Override configure function, and inside it, bind service names to
+Create module by extending it from 'Module'. Override 'configure' function, and inside it, bind service names to
 service constructor functions 
 
 ServiceModule.ts
