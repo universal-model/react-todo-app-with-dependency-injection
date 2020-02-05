@@ -24,6 +24,8 @@ ServiceModule.ts
     }
     
 ### 2. Create Dependency Injection (DI) container
+Use module(s) created in step 1. here
+
 diContainer.ts
 
     import { Container } from 'noicejs';
