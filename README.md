@@ -54,8 +54,9 @@ Configure DI container created in step 2. before rendering app.
     });
     
 ### 4. Create services
-Inject services by names to Services class constructor. Export 'getServices()' function that will return an
-instance of Services created by 'diContainer.create' function. Created 'Services' class instance contains injected
+Inject services by names to Services class constructor. In 'Inject' decorator the name of service is same as
+given in step 1. to 'bind' function Export 'getServices()' function that will return an instance of Services
+created by 'diContainer.create' function. Created 'Services' class instance contains injected
 services.
 
 **services.ts**
