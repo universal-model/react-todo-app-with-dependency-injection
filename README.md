@@ -106,7 +106,12 @@ Configure DI container created in step 2. before rendering app.
     });
     
 #### Vue
-**
+**main.ts**
+
+    import diContainer from '@/diContainer';
+     diContainer.configure().then(() => {
+       createApp(App).mount( "#app");
+     });
     
 ### 4. Create services
 Inject services by names to Services class constructor. In 'Inject' decorator the name of service is the same as
