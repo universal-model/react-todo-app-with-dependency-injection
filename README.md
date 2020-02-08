@@ -1,4 +1,7 @@
-# Universal Model React Todo App with Dependency Injection
+# Universal Model Angular/React/Svelte/Vue Todo App with Dependency Injection
+
+These instructions apply for any UI Framework (Angular, React, Svelte or Vue).
+Only difference between frameworks is in step 3. below. 
 
 If you want to use dependency injection, I suggest to use [noicejs library]
 
@@ -63,6 +66,17 @@ Use module(s) created in step 1. to create DI container using 'Container.from' f
 ### 3. Configure DI container
 Configure DI container created in step 2. before rendering app.
 
+#### Angular
+**main.ts**
+
+    import diContainer from '@/diContainer';
+
+    diContainer.configure().then(() => {
+      platformBrowserDynamic().bootstrapModule(AppModule)
+        .catch(err => console.error(err));
+    });
+
+#### React
 **main.tsx**
     
     import diContainer from '@/diContainer';
@@ -74,6 +88,25 @@ Configure DI container created in step 2. before rendering app.
         render(<App />, rootElement);
       }
     });
+    
+#### Svelte
+**main.js**
+
+    import diContainer from '@/diContainer';
+    
+    let app;
+    
+    diContainer.configure().then(() => {
+      app = new App({
+        target: document.body,
+        props: {
+          name: 'world'
+        }
+      });
+    });
+    
+#### Vue
+**
     
 ### 4. Create services
 Inject services by names to Services class constructor. In 'Inject' decorator the name of service is the same as
